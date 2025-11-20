@@ -166,8 +166,6 @@ a {
 }
 .slider .list .item img{
     width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 .slider .list .item::after{
     content: '';
@@ -183,8 +181,8 @@ a {
 .slider .list .item .content{
     position: absolute;
     left: 10%;
-    top: 25%;
-    width: 55%;
+    top: 35%;
+    width: 60%;
     z-index: 1;
     color: #fff;
 }
@@ -350,7 +348,24 @@ a {
     background-position: 50% 43px;
 }
 
+.work-section .swiper-slide img{
+    position: relative;
+}
 
+.work-section .swiper-slide img {
+  background: #000;
+  background: linear-gradient(90deg, #000 0%, #fff 100%);
+  
+  display: flex;
+}
+.work-section .swiper-slide img {
+  opacity: 1;
+  width: 100%;
+  transition: opacity 500ms 0ms ease-in-out;
+  .work-section .swiper-slide img:hover { opacity: 1 }
+
+
+}
 .popup-image{
     position: fixed;
     top: 0;
@@ -362,7 +377,7 @@ a {
     display: none;
 }
     
-.popup-image span{
+.popup-image .cross-icon{
         position: absolute;
         top: 0;right: 10px;
         font-size: 60px;
@@ -372,16 +387,33 @@ a {
         z-index: 100;
     }
 
-.popup-image img{
+    .popup-div{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 30px;
+        align-items: center;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+
+.popup-image img{
         border: 5px solid #fff;
         border-radius: 5px;
-        object-fit: cover;
-        width: 500px;
+        width: 100%;
     } 
+
+    .right-popup ul li{
+        padding: 5px 0px;
+        font-size: 24px;
+        font-weight: 600;
+        color: #fff;
+    }
+
+    .right-popup ul li span{
+        color: #ffbc13;
+    }
 
     .swiper-wrapper{
         padding: 50px 0px;
@@ -519,8 +551,15 @@ a {
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 10px;
+    text-align: center;
     align-content: center;
     justify-items: center;
+}
+
+.partners-imgs img{
+    width: 200px;
+    height: 250px;
+    border: 5px solid #ffbc13;
 }
 
 .testimonials-section{
@@ -906,7 +945,7 @@ ul{
         top: 35%;   
     }
 
-    .services-inner, .testimonials-section, .partners-imgs, .about-inner{
+    .services-inner, .testimonials-section, .partners-imgs, .about-inner, .popup-div, .footer-inner{
         grid-template-columns: repeat(1,1fr);
         gap: 15px;
     }
@@ -943,5 +982,23 @@ ul{
 
     .links ul li a{
         font-size: 14px;
+    }
+
+    .right-popup ul li {
+    padding: 5px 0px;
+    font-size: 14px;
+    }
+
+    .lower-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 15px 15px;
+    }
+
+    .lower-footer p{
+        font-size: 12px;
     }
 }
